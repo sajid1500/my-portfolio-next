@@ -7,7 +7,7 @@ import './globals.css'; // Make sure this imports your Tailwind CSS
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-const inter = Inter({ subsets: ['latin'] });
+const inter = Inter({ subsets: ['latin'] }); 
 
 // Define metadata for your entire site
 export const metadata: Metadata = {
