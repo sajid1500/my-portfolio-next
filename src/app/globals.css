@@ -1,26 +1,65 @@
+/*
+The standard and recommended way to include Tailwind CSS directives.
+These are processed by PostCSS to inject Tailwind's base styles,
+components, and utility classes.
+*/
 @import "tailwindcss";
+@tailwind utilities;
 
+/*
+  Define custom CSS variables for your light theme colors.
+  These are defined on the :root element (html tag) to be globally accessible.
+*/
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* Light mode background color */
+  --foreground: #171717; /* Light mode text color */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/*
+  Override custom CSS variables for dark theme colors
+  when the user's system prefers a dark color scheme.
+*/
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0a0a0a; /* Dark mode background color */
+    --foreground: #ededed; /* Dark mode text color */
   }
 }
 
+/*
+  Apply the custom CSS variables to the body.
+  The `background` and `color` properties will dynamically change
+  based on the preferred color scheme.
+  Removed font-family here to let Next.js's `next/font/google`
+  or Tailwind's font configuration manage fonts for better optimization.
+*/
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif;  -- REMOVED --
+     If you strictly want Arial, please remove the `Inter` import
+     and its usage (className) from `app/layout.tsx`. */
+}
+
+/*
+  Ensure the HTML and body elements take full height and
+  have smooth scrolling for anchor links.
+*/
+html, body {
+  scroll-behavior: smooth; /* Enables smooth scrolling when navigating to anchor links */
+  min-height: 100vh; /* Ensures the body covers at least the full viewport height */
+  margin: 0; /* Remove default browser margin */
+  padding: 0; /* Remove default browser padding */
+  box-sizing: border-box; /* Ensures padding and border are included in element's total width/height */
+}
+
+/*
+  Specific styling for the Next.js root div (`#__next`).
+  This ensures that your main content area (where `children` are rendered in layout.tsx)
+  can properly expand and your footer sticks to the bottom.
+*/
+#__next {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
