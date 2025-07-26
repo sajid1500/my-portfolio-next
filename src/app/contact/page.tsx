@@ -25,7 +25,7 @@ export default function ContactPage() {
   return (
     <section className="py-8">
       <h2 className="text-3xl font-bold mb-6 text-center">Get in Touch</h2>
-      <div className="max-w-xl mx-auto bg-gray-300 p-8 rounded-lg shadow-md">
+      <div className="max-w-xl mx-auto bg-gray-100 p-8 rounded-lg shadow-md">
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label
