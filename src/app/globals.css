@@ -4,15 +4,14 @@ These are processed by PostCSS to inject Tailwind's base styles,
 components, and utility classes.
 */
 @import "tailwindcss";
-@tailwind utilities;
 
 /*
   Define custom CSS variables for your light theme colors.
   These are defined on the :root element (html tag) to be globally accessible.
 */
 :root {
-  --background: #ffffff; /* Light mode background color */
-  --foreground: #171717; /* Light mode text color */
+  --background: #f9f9f9; /* Light mode background color */
+  --foreground: #121212; /* Light mode text color */
 }
 
 /*
@@ -21,8 +20,8 @@ components, and utility classes.
 */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a; /* Dark mode background color */
-    --foreground: #ededed; /* Dark mode text color */
+    --background: #121212; /* Dark mode background color */
+    --foreground: #e0e0e0; /* Dark mode text color */
   }
 }
 
@@ -45,7 +44,8 @@ body {
   Ensure the HTML and body elements take full height and
   have smooth scrolling for anchor links.
 */
-html, body {
+html,
+body {
   scroll-behavior: smooth; /* Enables smooth scrolling when navigating to anchor links */
   min-height: 100vh; /* Ensures the body covers at least the full viewport height */
   margin: 0; /* Remove default browser margin */
