@@ -7,14 +7,14 @@ export default function HomePage() {
     <section className="text-center py-16">
       <div className="relative w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden">
         <Image
-          src="/images/premium_photo-1666900440561-94dcb6865554.jpeg"
+          src="/images/sajid.jpg"
           alt="Your Name"
           fill // Add 'fill' as a boolean prop
           className="object-cover" // Add object-cover class directly
         />
       </div>
       <h1 className="text-4xl font-bold mb-4">
-        Hi, I&apos;m Sajid Chowdhury👋
+        Hi, I&apos;m Sajid👋
       </h1>
       <p className="text-xl text-gray-700 mb-6">
         A passionate full-stack web devoloper specializing in MERN.
